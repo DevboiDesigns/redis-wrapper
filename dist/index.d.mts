@@ -26,6 +26,11 @@ declare class RedisLib {
      */
     initRedisClient: () => Promise<express.RequestHandler<express_serve_static_core.ParamsDictionary, any, any, qs.ParsedQs, Record<string, any>> | undefined>;
     /**
+     * * Close redis client
+     * @returns void
+     */
+    close: () => Promise<void>;
+    /**
      * * SET analytics value in redis
      * @param type RedisAnalyticsType
      * @param appType RedisAppType (default 'sdk')

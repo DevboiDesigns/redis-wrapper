@@ -81,6 +81,17 @@ export default class RedisLib {
   }
 
   /**
+   * * Close redis client
+   * @returns void
+   */
+  close = async () => {
+    if (!this.client) {
+      throw new Error("Redis client not initialized")
+    }
+    await this.client.disconnect()
+  }
+
+  /**
    * * SET analytics value in redis
    * @param type RedisAnalyticsType
    * @param appType RedisAppType (default 'sdk')

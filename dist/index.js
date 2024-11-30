@@ -458,6 +458,16 @@ var RedisLib = class _RedisLib {
       }
     });
     /**
+     * * Close redis client
+     * @returns void
+     */
+    this.close = () => __async(this, null, function* () {
+      if (!this.client) {
+        throw new Error("Redis client not initialized");
+      }
+      yield this.client.disconnect();
+    });
+    /**
      * * SET analytics value in redis
      * @param type RedisAnalyticsType
      * @param appType RedisAppType (default 'sdk')
