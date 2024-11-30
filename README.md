@@ -56,6 +56,10 @@ await redisLib.initRedisClient()
 
 - Initializes the Redis client and sets up session management.
 
+`close`
+
+- Closes the Redis client connection.
+
 `setAnalyticsValue`
 
 - Sets an analytics value in Redis.
